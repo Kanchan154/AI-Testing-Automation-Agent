@@ -1,5 +1,6 @@
 import { boolean, integer, jsonb, pgTable, serial, text, timestamp, varchar } from "drizzle-orm/pg-core";
 
+// user schema
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   name: text("name"),
@@ -8,6 +9,7 @@ export const users = pgTable("users", {
   credits: integer("credits").notNull().default(2000),
 });
 
+// credit purchase schema
 export const creditPurchases = pgTable("credit_purchases", {
   id: serial("id").primaryKey(),
   userId: integer("user_id").references(() => users.id).notNull(),
@@ -18,6 +20,7 @@ export const creditPurchases = pgTable("credit_purchases", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+// reporitories schema
 export const repositories = pgTable("repositories", {
   id: serial("id").primaryKey(),
   userId: integer("user_id").references(() => users.id).notNull(),
@@ -35,6 +38,7 @@ export const repositories = pgTable("repositories", {
   globalInstructions: varchar("globalInstructions", { length: 255 }).default("None"),
 })
 
+// test case table
 export const TestCaseTable = pgTable("testcases", {
   id: serial("id").primaryKey(),
   // repo / project details
