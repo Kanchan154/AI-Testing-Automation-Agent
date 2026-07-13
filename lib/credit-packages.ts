@@ -24,7 +24,7 @@ export const creditPackages: CreditPackage[] = [
         credits: 5000,
         amountCents: 249,
         badge: 'Most Popular',
-        features: ['5000 credits added instantly', 'Best value for active teams', 'Stripe secure checkout'],
+        features: ['5000 credits added instantly', 'Best value for active teams', 'Stripe secure checkout', 'Customer Support'],
     },
 ]
 
