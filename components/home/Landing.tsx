@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link'
 import { ArrowRight, Bot, CheckCircle2, FolderPlus, Github, Layers3, PlayCircle, ShieldCheck, Sparkles, Video } from 'lucide-react'
 import { SignInButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs'
