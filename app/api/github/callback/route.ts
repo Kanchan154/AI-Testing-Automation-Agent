@@ -20,6 +20,7 @@ export async function GET(req: NextRequest) {
         }).toString()
     })
 
+    // getting data from the github api endpoint
     const data: any = await res.json()
     const token = data.access_token
     if (!token) return NextResponse.redirect(new URL(`/workspace?error=missing-token`, req.url), 302);
@@ -33,6 +34,5 @@ export async function GET(req: NextRequest) {
         maxAge: 60 * 60 * 24 * 30, // 30 days
         path: '/'
     })
-
     return response;
 }
